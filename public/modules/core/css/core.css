@@ -1,5 +1,5 @@
 .content {
-	margin-top: 50px;
+	margin-top: 150px;
 }
 .undecorated-link:hover {
 	text-decoration: none;
@@ -7,9 +7,28 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
 	display: none !important;
 }
-.ng-invalid.ng-dirty {
-	border-color: #FA787E;
+
+.form-group {
+	margin-top: 15px;
 }
-.ng-valid.ng-dirty {
-	border-color: #78FA89;
+
+.navbar-brand {
+	margin-top: 10px;
+}
+
+.collapse.navbar-collapse {
+	background-color: #242424;
+}
+.collapse.navbar-collapse input {
+	background-color: #DEDDD3;
+}
+.navbar-brand {
+	color: #ee932a;
+}
+.navbar-header {
+	background-color: #242424;
+}
+
+fieldset a:hover {
+	text-decoration: none;
 }
