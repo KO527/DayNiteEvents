@@ -1,4 +1,4 @@
-<div class="container" data-ng-controller="HeaderController">
+ <div class="container" data-ng-controller="HeaderController">
 	<div class="navbar-header">
 		<button class="navbar-toggle" type="button" data-ng-click="toggleCollapsibleMenu()">
 			<span class="sr-only">Toggle navigation</span>
@@ -6,7 +6,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a href="/#!/" class="navbar-brand">dayniteevents</a>
+		<a href="/#!/" class="navbar-brand">DayNiteEvents</a>
 	</div>
 	<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
 		<ul class="nav navbar-nav" data-ng-if="menu.shouldRender(authentication.user);">
@@ -23,7 +23,7 @@
 				<a ng-switch-default href="/#!/{{item.link}}" data-ng-bind="item.title"></a>
 			</li>
 		</ul>
-		<ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
+	 <!-- <ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
 			<li ui-route="/signup" ng-class="{active: $uiRoute}">
 				<a href="/#!/signup">Sign Up</a>
 			</li>
@@ -31,7 +31,34 @@
 			<li ui-route="/signin" ng-class="{active: $uiRoute}">
 				<a href="/#!/signin">Sign In</a>
 			</li>
-		</ul>
+		</ul> -->
+
+ 		<form data-ng-hide='authentication.user' data-ng-submit="signin()" class = "form-inline nav navbar navbar-right">
+		<fieldset>
+			<div class = 'form-group col-md-2 col-md-offset-1 input-sm'>
+				<label class = 'sr-only' for="username">Username</label>
+				<input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
+			</div>
+			<div class = 'form-group col-md-1 col-md-offset-2 input-sm'>
+				<label class = 'sr-only' for="password">Password</label>
+				<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+			</div>
+			<div class = 'form-group col-md-offset-4 col-md-2'>
+				<button type="submit" class="btn btn-primary">Sign in</button><!-- &nbsp; or&nbsp; -->
+				<a class='col-md-offset-1' href="/#!/signup">Sign up</a>
+			</div>
+		</fieldset>
+		</form>
+		<!--import from signin.client.view.html-->
+		<!-- <ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
+			<li ui-route="/signup" ng-class="{active: $uiRoute}">
+				<input type='text' value = 'FirstName'>
+			</li>
+			<li class="divider-vertical"></li>
+			<li ui-route="/signin" ng-class="{active: $uiRoute}">
+				<input type='text' value = 'Lastname'>
+			</li>
+		</ul>	 -->
 		<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
