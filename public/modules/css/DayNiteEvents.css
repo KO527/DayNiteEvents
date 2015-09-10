@@ -1,0 +1,27 @@
+.newvideo {
+/*  display: inline;
+*/ 
+display: block;
+width: 100%;
+}
+/*
+audio,
+canvas,
+progress
+{
+	width: 100%;
+	display: inline-block;
+	vertical-align: baseline;
+}*/
+.container{
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+/*.navbar-inverse {
+	color: #080808;
+}
+.navbar-header {
+	margin-right: 0;
+	margin-left: 0;
+}*/
