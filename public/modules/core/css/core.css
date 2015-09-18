@@ -1,34 +1,12 @@
-.content {
-	margin-top: 150px;
-}
-.undecorated-link:hover {
-	text-decoration: none;
-}
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-	display: none !important;
+
+.container {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
 }
 
-.form-group {
-	margin-top: 15px;
+.container .btn-primary {
+	margin-left: 20px;
+	margin-top: 5px;
 }
 
-.navbar-brand {
-	margin-top: 10px;
-}
-
-.collapse.navbar-collapse {
-	background-color: #242424;
-}
-.collapse.navbar-collapse input {
-	background-color: #DEDDD3;
-}
-.navbar-brand {
-	color: #ee932a;
-}
-.navbar-header {
-	background-color: #242424;
-}
-
-fieldset a:hover {
-	text-decoration: none;
-}
