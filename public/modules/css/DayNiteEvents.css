@@ -1,24 +1,10 @@
-/*
-audio,
-canvas,
-progress
-{
-	width: 100%;
-	display: inline-block;
-	vertical-align: baseline;
-}*/
 .container {
 	width: 100%;
 	padding-left: 0;
 	padding-right: 0;
 }
-/*.navbar-inverse {
-	color: #080808;
-}
-*/
 
 .container .btn-primary {
 	margin-left: 20px;
 	margin-top: 5px;
 }
-
