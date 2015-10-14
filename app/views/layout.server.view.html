@@ -35,7 +35,7 @@
 	<link href="/modules/core/img/brand/favicon.ico" rel="shortcut icon" type="image/x-icon">
 	<!--Application CSS Files-->
 	{% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
-	<link href ="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+	<link href ="node_modules/video.js/dist/video-js/video-js.css" rel="stylesheet">
 
 	<!-- HTML5 Shim -->
 	<!--[if lt IE 9]>
@@ -58,10 +58,14 @@
 
 	<!--Application JavaScript Files-->
 	{% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %} 
-	<script src="//vjs.zencdn.net/4.12/video.js"></script>
+	<script src="node_modules/video.js/dist/video-js/video.js"></script>
 	{% if process.env.NODE_ENV === 'development' %}
 	<!--Livereload script rendered -->
 	<script type="text/javascript" src="http://{{request.hostname}}:35729/livereload.js"></script>
+	<script src="node_modules/videojs-background/lib/videojs-Background.js"></script>
+	<script>
+	videojs('#bg-video').Background();
+	</script>
 	{% endif %}
 </body>
 
