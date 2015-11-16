@@ -2,8 +2,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<title>{{title}}</title>
-
+	<title>{{title}}</title>							<!--Try one more time the ability to hide the download button with-->
+											<!--the BgVideo module-->
 	<!-- General META -->
 	<meta charset="utf-8">
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
@@ -36,13 +36,14 @@
 	<!--Application CSS Files-->
 	{% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
 	<link href ="node_modules/video.js/dist/video-js/video-js.css" rel="stylesheet">
-
+	<script src="node_modules/video.js/dist/video-js/video.js"></script>
 	<!-- HTML5 Shim -->
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
-
+<script type="text/javascript">
+</script>
 <body class="ng-cloak">
 	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
 	<section class="content">
@@ -58,13 +59,16 @@
 
 	<!--Application JavaScript Files-->
 	{% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %} 
-	<script src="node_modules/video.js/dist/video-js/video.js"></script>
+	<!--<script src="public/lib/jquery/dist/jquery.js"></script>
+	<script src="public/lib/jquery-ui/jquery-ui.min.js"></script>
+	<script src="public/lib/imagesloaded/imagesloaded.js"></script>
+	<script src="public/lib/video.js/dist/video.js"></script> -->
 	{% if process.env.NODE_ENV === 'development' %}
 	<!--Livereload script rendered -->
 	<script type="text/javascript" src="http://{{request.hostname}}:35729/livereload.js"></script>
-	<script src="node_modules/videojs-background/lib/videojs-Background.js"></script>
+	
 	<script>
-	videojs('#bg-video').Background();
+	// videojs('bg-video').Background();
 	</script>
 	{% endif %}
 </body>
