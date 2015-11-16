@@ -1,7 +1,3 @@
-.content {
-  margin-top: 20px;
-  width: 100%;
-}
 .undecorated-link:hover {
   text-decoration: none;
 }
@@ -34,7 +30,6 @@ fieldset a:hover {
 section {
   position: relative;
 }
-
 .transition(@prop: top, @time: 2s, @ease: ease){
     -webkit-transition: @prop @time @ease;
     -moz-transition: @prop @time @ease;
@@ -42,7 +37,6 @@ section {
     -ms-transition: @prop @time @ease;
     transition: @prop @time @ease;
 }
-
 .SignUpForm {
  .transition(top, 2s, ease);
   position: absolute;
@@ -52,15 +46,12 @@ section {
   background-color: #242424;
   border-radius: 10px;
 }
-
-
 .SignUpForm .box {
   position: relative;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
-
 .box:before, .box:after{
   content: "";
   position: absolute;
@@ -73,7 +64,6 @@ section {
    -moz-border-radius:100px / 10px;
    border-radius:100px / 10px;
 }
-
 .box:after{
   right:10px; 
       left:auto;
@@ -83,7 +73,6 @@ section {
       -o-transform:skew(8deg) rotate(3deg); 
       transform:skew(8deg) rotate(3deg);
 }
-
 .SignUpForm .form-group input {
   background-color: #F8F7EB;
 }
@@ -91,7 +80,6 @@ section {
   color: #F8F7EB; 
 }
 .home {
-  overflow-y: hidden;
   height: 100%;
   width: 100%;
   &:hover{
@@ -100,27 +88,11 @@ section {
        }
   }
 }
-#bg-video {
-  overflow: hidden;
-  position: absolute;
-  height:100%;
-  width:100%;
-  top:0;
-  left:0;
-  z-index: -998;
-}
 video {
-  display: block;
-  overflow-y: hidden:
-}
-.videojs-background-wrap {
-  overflow: hidden;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -998;
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: -998;
 }
 .home input[type=text], .home input[type=email], .home input[type=password] {
   height: 20.25px;
@@ -131,4 +103,8 @@ video {
   margin: auto;
   position: relative;
   top: 4px;
+}
+.SignUpForm .btn {
+  padding: 4.9 9.7;
+  font-size: 11.4;
 }
