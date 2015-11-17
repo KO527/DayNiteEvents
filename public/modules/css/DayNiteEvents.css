@@ -1,3 +1,9 @@
+html {
+	overflow-y: hidden;
+}
+.content {
+  margin-top: 20px;
+}
 .container {
 	width: 100%;
 	padding-left: 0;
