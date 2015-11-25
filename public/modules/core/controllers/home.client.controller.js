@@ -7,5 +7,4 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 		$scope.authentication = Authentication;
 	}
 
-	//When the mouse hovers over the page, signup box should appear
 ]);

@@ -2,13 +2,13 @@
 
 		
  		<!-- poster="/modules/core/img/DayNiteEventsPoster.png" -->
-  		 <video id="bg-video" class="video-js vjs-default-skin vjs-fullscreen" preload loop muted type='video/mp4'>
+  		 <video class="vjs-default-skin vjs-fullscreen" preload loop muted type='video/mp4'>
         		<source src = "/modules/core/videos/DayNiteEvents.mp4">
  		</video>
 
 
 		<div class = 'text-center col-md-offset-5 col-md-2 input-sm SignUpForm box'>
-			<form name="userForm" method = "POST" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="40f">
+			<form data-ng-controller="AuthenticationController" name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="40f">
 			<fieldset>
 				<div class="form-group">
 					<label for="firstName">First Name</label>
@@ -33,7 +33,7 @@
 				<div class="text-center form-group">
 					<button type="submit" class="btn btn-large btn-primary">Sign up</button>
 <!--  					<a href="/#!/signin" class="show-signup">Sign in</a>
- --> 				</div>
+--> 				</div>
 				<div data-ng-show="error" class="text-center text-danger">
 					<strong data-ng-bind="error"></strong>
 				</div>
