@@ -5,7 +5,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
 		$scope.authentication = Authentication;
 
 		// If user is signed in then redirect back home
-		if ($scope.authentication.user) $location.path('/modules/articles/views/list-articles.client.view.html');
+		if ($scope.authentication.user) $location.path('/');
 
 		$scope.signup = function() {
 			$http.post('/auth/signup', $scope.credentials).success(function(response) {
@@ -13,7 +13,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
 				$scope.authentication.user = response;
 
 				// And redirect to the articles page
-				$location.path('/articles');
+				$location.path('/events');
 			}).error(function(response) {
 				$scope.error = response.message;
 			});
@@ -26,7 +26,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
 				$scope.authentication.user = response;
 
 				// And redirect to the articles page
-				$location.path('/articles');
+				$location.path('/events');
 			}).error(function(response) {
 				$scope.error = response.message;
 			});
