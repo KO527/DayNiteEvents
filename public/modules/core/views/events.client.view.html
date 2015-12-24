@@ -1,0 +1,49 @@
+<section class = 'EventsDisplay' data-ng-controller= 'EventsController'>
+
+	<!--This needs to be tested -->
+	<div class = '.row'>
+		<div class = 'EventsImm col-md-3'>
+			<div class = "header"><h3>Nearby</h3></div>
+			<ul> 
+			<li data-ng-repeat= "festival in ImmMonthFestivals.events" class = "list-group-item"> 
+				<h5 data-ng-href="#!/events/{{event.url}}">{{festival.title}}</h5>
+				<!--Figure out how to link the user to the site where the tickets are-->
+				<li data-ng-repeat = "EachPerformer in festival.performers" class = "PlaceLeft">
+				<br><span>{{EachPerformer.name}}</span></br>
+				</li>
+				<span class = "PlaceRight">{{festival.datetime_local | date: 'MMM d, y'}}</span>
+				<br><span class = "PlaceLeft">{{festival.venue.name}}, {{festival.venue.address}}</span></br>
+			</li>
+			</ul> 																		
+		</div>
+		<div class = 'FavEvents col-md-3'>
+			<div class = "header"><h3>Most Popular</h3></div>
+			<ul>
+			<li data-ng-repeat = "festival in FavEvents.events" class = "list-group-item">
+				<h5 data-ng-href="#!/events/{{event.url}}">{{festival.title}}</h5>
+				<li data-ng-repeat = "EachPerformer in festival.performers" class = "PlaceLeft">
+				<br><span>{{EachPerformer.name}}</span></br>
+				</li>
+ 				<span class = "PlaceRight">{{festival.datetime_local | date: 'MMM d, y'}}</span>
+				<br><span class = "PlaceLeft">{{festival.venue.name}}, {{festival.venue.address}}</span></br>
+			</li>
+			</ul>
+		</div>
+		<div class = 'EventsSugg col-md-3'>
+			<div class = "header"><h3>Think Outside The Box</h3></div>
+			<ul>
+			<li data-ng-repeat = "festival in SuggEvents.events" class = "list-group-item">
+				<h5 data-ng-repeat="#!/events/{{event.url}}">{{festival.title}}</h5>
+				<li data-ng-repeat = "EachPerformer in festival.performers" class = "PlaceLeft">
+				<br><span>{{EachPerformer.name}}</span></br>
+				</li>
+ 				<span class = "PlaceRight">{{festival.datetime_local | date: 'MMM d, y'}}</span>
+				<br><span class = "PlaceLeft">{{festival.venue.name}}, {{festival.venue.address}}</span></br>
+			</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<!-- <footer>
+
+</footer> -->
