@@ -15,7 +15,7 @@ angular.module('events').controller('EventsController', ['$scope', 'Events', 'Me
 		$scope.ListofEvents = undefined;
 
 
-		Events.ParseCurrMonthFest().success(function(data){
+		Events.ParsePopularFests().success(function(data){
 			$scope.MonthFestivals = data;
 		});
 		
