@@ -22,7 +22,7 @@ var fs = require('fs'),
 	config = require('./config'),
 	consolidate = require('consolidate'),
 	path = require('path');
-
+	
 module.exports = function(db) {
 	// Initialize express app
 	var app = express();
