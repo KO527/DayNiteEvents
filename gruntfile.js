@@ -1,4 +1,8 @@
+/* jslint indent: false */
+/* jshint -W099: false */
+
 'use strict';
+
 
 module.exports = function(grunt) {
 	// Unified Watch Object
@@ -14,6 +18,13 @@ module.exports = function(grunt) {
 	// Project Configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		'modulus-deploy': {
+		 	production: {
+		 		options: {
+		 			project: 'GodsOfRiotry'
+		 		}
+		 	},
+		 },
 		watch: {
 			serverViews: {
 				files: watchFiles.serverViews,
@@ -143,7 +154,7 @@ module.exports = function(grunt) {
 	});
 
 	// Load NPM tasks
-	require('load-grunt-tasks')(grunt);
+	 require('load-grunt-tasks')(grunt);
 
 	// Making grunt default to force in order not to break the project.
 	grunt.option('force', true);
@@ -157,9 +168,14 @@ module.exports = function(grunt) {
 		grunt.config.set('applicationCSSFiles', config.assets.css);
 	});
 
+	grunt.loadNpmTasks('grunt-modulus-deploy');
+
 	// Default task(s).
 	grunt.registerTask('default', ['lint', 'concurrent:default']);
 
+	// Allows deployment to modulus.io from Grunt.
+	grunt.registerTask('deploy-production', ['modulus-deploy:production']);
+	
 	// Debug task.
 	grunt.registerTask('debug', ['lint', 'concurrent:debug']);
 
