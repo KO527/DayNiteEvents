@@ -1,3 +1,6 @@
+/* jslint indent: false */
+/* jshint -W099: false */
+
 'use strict';
 
 angular.module('events').controller('EventsController', ['$scope', 'Events', 'Menus',
@@ -6,27 +9,35 @@ angular.module('events').controller('EventsController', ['$scope', 'Events', 'Me
 		// ...
 		$scope.menu = Menus.getMenu('topbar');
 
-		$scope.Preferencestitle = 'What\'s Your Wave';
-		
-		$scope.YearsEventstitle = 'This Year\'s Events';
-		
 
-		$scope.preference = undefined;
-		$scope.ListofEvents = undefined;
-
-
-		Events.ParsePopularFests().success(function(data){
-			$scope.MonthFestivals = data;
-		});
-		
 		Events.GiveMeImmEvents().success(function(data){
 			
 			$scope.ImmMonthFestivals = data;
 			// if (ImmMonthFestivals.date_tbd == true) {}
 		});
-		Events.SuggEvents().success(function(data){
-			$scope.SuggEvents = data;
+
+		Events.ParsePopularFests().success(function(data){
+			
+		  	$scope.MonthEvents = data;
+
+		  	var Data = $scope.MonthEvents;
+			// Figures out if there is a performer present or not
+			$scope.IsPerformerPres = function(index, CurrPerformer){
+		  		console.log('Success');
+		  		for (var Tax in Data.events.performers.taxonomies){
+		  			if (Tax.name === 'concert'){
+		  				this.perfomers[index].CurrPerformer.PerformerPres = true;
+		  			}
+		  			else{
+						this.performers[index].CurrPerformer.PerformerPres = false;
+		  			}
+		  		}
+			};
+		});
+		
+	           Events.SuggEvents().success(function(data){
+		 	$scope.SuggEvents = data;
 		});
 
 	}
-]);
+ ]);
