@@ -1,3 +1,4 @@
+
 'use strict';
 
 angular.module('events').config(['$stateProvider', function($stateProvider){
